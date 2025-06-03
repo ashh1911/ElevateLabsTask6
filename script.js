@@ -1,12 +1,10 @@
 document.getElementById('contactForm').addEventListener('submit', function (e) {
   e.preventDefault();
 
-  // Get input values
   const name = document.getElementById('name').value.trim();
   const email = document.getElementById('email').value.trim();
   const message = document.getElementById('message').value.trim();
 
-  // Clear messages
   document.getElementById('nameError').textContent = '';
   document.getElementById('emailError').textContent = '';
   document.getElementById('messageError').textContent = '';
@@ -14,13 +12,11 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
 
   let valid = true;
 
-  // Validate name
   if (name === '') {
     document.getElementById('nameError').textContent = 'Name is required.';
     valid = false;
   }
 
-  // Validate email using regex
   const emailRegex = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
   if (email === '') {
     document.getElementById('emailError').textContent = 'Email is required.';
@@ -30,7 +26,6 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
     valid = false;
   }
 
-  // Validate message
   if (message === '') {
     document.getElementById('messageError').textContent = 'Message is required.';
     valid = false;
